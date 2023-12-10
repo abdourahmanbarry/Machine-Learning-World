@@ -1,18 +1,21 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Machine Learning World"
   navbar:
     right:
+      - icon: github
+        text: "My Github Repository"
+        href: https://github.com/abdourahmanbarry/Machine-Learning-World
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/abdourahmanbarry/Machine-Learning-World
+      
 format:
   html:
-    theme: cosmo
+    theme: pulse
     css: styles.css
 
 editor: visual
