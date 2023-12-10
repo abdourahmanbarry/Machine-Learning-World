@@ -1,0 +1,84 @@
+---
+title: Random Variables
+author: Abdourahman Barry
+date: '2023-11-18'
+categories:
+  - code
+  - analysis
+freeze: false
+jupyter: python3
+---
+
+### What is a Random Variable?
+
+A random variable is simply a mapping from a sample space of a random experiment to the real line. Imagine performing an experiment, say throwing a die twice, you might be interested in a numerical value such as the following :
+
+a)  Number of six oberved
+
+b)  The sum of the outcomes of the two rolls
+
+c)  even numbers observed
+
+This are all examples of random variables of our experiment. One thing that we can observe is that from one experiment we can have different random variable and each one is also not surprisely random because its values are derived from the sample space which is itself random.
+
+Lets demonstrate this idea by performing a simple experiment of throwing a die 100 times and counting the number of heads observed. If we repeat this experiment a large number of times, how many number of heads would we likely to observe? Notice that here the number of heads observed for each experiment(tose of a die 100 times) is a random variable that can take values from 0 t0 100. The following code does exactly this.
+
+```{python}
+#| fig-align: center
+import numpy as np
+from matplotlib import pylab as plt
+import pandas as pd
+
+heads = []
+
+for i in range(5000):
+    outcome  = np.sum(np.random.randint(0, 2, 100))
+    heads.append(outcome)
+
+_ = plt.hist(heads, 100)
+```
+
+We can see that repeating this experiment a number of times, we are more likely to observe 50 heads and values closed to it for each run of the experient, while values closed to 0 or 100 would be rarely observed. In fact, this is an example of Binomial Random variable. As you can see this distribution has the "famous" bell shape, which is ubiquitous in number applications. We will study the continuous analog called the Gaussian distribution.
+
+# Gaussian Random Variable
+
+A random variable is called Gaussian if it has the following probability density function
+
+$$\large{f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} exp\displaystyle \{ {-\frac{(x - \mu)^2}{2\sigma^2}}} \}$$
+
+where $\sigma$ is the standard deviation and $\mu$ is the mean of the distribution. The Gaussian distribution has the following shape.
+
+```{python}
+# | fig-align: center
+def pdf(x, u, s):
+    p1 = 1/(np.sqrt(2*np.pi)*s)
+    p2 = - ((x - u)**2)/(2*s**2)
+    return p1*np.e**p2
+
+x = np.arange(-4, 4, 0.25)
+y = pdf(x, 0, 1)
+_ = plt.plot(x, y)
+```
+
+The width of this curve is controlled by the value of $\sigma$ and the center point is controlled by $\mu$. We can see this in the next plots.
+
+```{python}
+#| fig-align: center
+parameters = [(0, 1), (7, 1 ), (15, 0.5), (15, 1.4)]
+f = plt.figure(figsize=(15,7))
+for i in range(4):
+    u, s = parameters[i]
+    x = np.arange(u-4, u+4, 0.1)
+    y = pdf(x, u , s)
+    plt.subplot(2, 2, i+1)
+    plt.ylim([0, 0.9])
+    _ = plt.plot(x, y)
+    plt.title(f's = {s}, u={u}')
+    
+```
+
+As expected the width of the curve increases with $\sigma$ and the center of the curve moves to wherever the mean is. However, the height of the curve is always inversely proportional to $\sigma$. As the value of the standard deviation increases, the height of the curve decreases and vice-versa.
+
+# Conclusion
+
+In conclusion, the gaussian distribution is very common and it is used a lot in practice. In our last blog post we will look at outlier detection where the idea of Gaussian distribution will be used to create a machine learning algorithm for outlier detection, which has a number of uses in practice.

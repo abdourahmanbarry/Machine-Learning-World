@@ -1,0 +1,12 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/Clustering/Clustering.html",
+      "/posts/Outlier Detection/Outlier Detection.html",
+      "/posts/Random Variables/Random Variables.html",
+      "/posts/Classification/Classification.html",
+      "/posts/Linear Regression/Linear Regression.html"
+    ]
+  }
+]

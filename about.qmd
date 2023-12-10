@@ -1,0 +1,16 @@
+---
+title: "About"
+image: profile.jpeg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
+About this blog
+
+My name is Abdourahman Barry, a graduate student in the CS department at Virginia Tech working towards my PhD. This blog post is part of the requirements for completing the intro to Machine Learning course and this is my take on what I have been able to learn this semester.
+
+Please, find the Github repository for this project below.
