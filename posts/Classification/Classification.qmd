@@ -110,7 +110,7 @@ for k in range(1, m):
     #print(precision_score(test_y, pred))
 plt.plot(range(1, m), recall, 'o--' , range(1, m), precision, 'o--')
 plt.legend(['recall', 'precision'])
-plt.xlabel('K neigbors')
+_ = plt.xlabel('K neigbors')
     
 ```
 
@@ -162,7 +162,7 @@ plt.ylabel('Precision')
 plt.subplot(1, 3, 3)
 plt.plot(recall, precision, label='Precision/Recall curve')
 plt.title('Precision/Recall(PR) Curve')
-plt.xlabel('Recall')
+_ = plt.xlabel('Recall')
 ```
 
 It seems like choicing the threshold for the logistic regression model to be 2 will give a high recall score for the model and the sacrifices in precision is not bad either. This will ensure that we have as few false negatives as possible, which is what is more important in this situation.

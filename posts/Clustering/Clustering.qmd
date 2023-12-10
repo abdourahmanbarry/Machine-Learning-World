@@ -11,7 +11,7 @@ jupyter: python3
 
 ### What is Clustering?
 
-Clustering in machine learning is a way of grouping a data into catagories where each category contains points with similar properties. This is an example of unsupervised learning because the dataset is not label. Clustering algorithm have a number of uses such as fraud detection, medical discovery and so on. We will demonstrate one of the applications of clustering algorithms in a later post for anomaly detection.
+Clustering in machine learning is a way of grouping a data into categories where each category contains points with similar properties. This is an example of unsupervised learning because the dataset is not label. Clustering algorithm have a number of uses such as fraud detection, medical discovery and so on. We will demonstrate one of the applications of clustering algorithms in a later post for anomaly detection.
 
 ![](Cluster1.png){fig-align="center" fig-width="7" fig-height="7" width="550"}
 
@@ -71,7 +71,7 @@ plt.plot(range(1, 11), mse, 'o--')
 plt.title('Mean Squared Error vs K')
 plt.ylabel('MSE')
 plt.xlabel('K')
-plt.grid('on')
+_ = plt.grid('on')
 ```
 
 It can be observed that at k=4 the curve starts to flatted. This suggests that K=4 might just be the right value for this problem. The following visualization will make this clear.

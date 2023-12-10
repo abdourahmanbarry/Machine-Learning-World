@@ -11,15 +11,15 @@ jupyter: python3
 
 ### What is a Random Variable?
 
-A random variable is simply a mapping from a sample space of a random experiment to the real line. Imagine performing an experiment, say throwing a die twice, you might be interested in a numerical value such as the following :
+A random variable is simply a mapping from a sample space to the real line. Imagine performing an experiment, say throwing a die twice, you might be interested in a numerical value such as the following :
 
-a)  Number of six oberved
+a)  Number of six observed
 
 b)  The sum of the outcomes of the two rolls
 
 c)  even numbers observed
 
-This are all examples of random variables of our experiment. One thing that we can observe is that from one experiment we can have different random variable and each one is also not surprisely random because its values are derived from the sample space which is itself random.
+This are all examples of random variables of our experiment. One thing that we can observe is that from one experiment we can have different random variable and each one is also not surprisinfly random because its values are derived from the sample space which is itself random.
 
 Lets demonstrate this idea by performing a simple experiment of throwing a die 100 times and counting the number of heads observed. If we repeat this experiment a large number of times, how many number of heads would we likely to observe? Notice that here the number of heads observed for each experiment(tose of a die 100 times) is a random variable that can take values from 0 t0 100. The following code does exactly this.
 
@@ -82,4 +82,4 @@ As expected the width of the curve increases with $\sigma$ and the center of the
 
 # Conclusion
 
-In conclusion, the gaussian distribution is very common and it is used a lot in practice. In our last blog post we will look at outlier detection where the idea of Gaussian distribution will be used to create a machine learning algorithm for outlier detection, which has a number of uses in practice.
+In conclusion, the Gaussian distribution is very common and it is used a lot in practice. In our last blog post we will look at outlier detection where the idea of Gaussian distribution will be used to create a machine learning algorithm for outlier detection, which has a number of uses in practice.
